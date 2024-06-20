@@ -1,0 +1,6 @@
+1.jpg dress
+2.jpg dress
+3.jpg pants
+4.jpg pants
+5.jpg coat
+6.jpg coat
