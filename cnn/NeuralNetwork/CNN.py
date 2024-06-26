@@ -25,7 +25,7 @@ class cnn(nn.Module):
         output = F.log_softmax(x, dim=1)
         return output
 
-class Trainer:
+class CNN_Trainer:
     def __init__(self, model, device, train_loader, test_loader, optimizer, epochs, inv_label_map):
         self.model = model
         self.device = device
@@ -65,7 +65,6 @@ class Trainer:
             print(
                 f"Test -- Average Loss : {test_loss:.4f}, Accuracy : {correct / len(self.test_loader.dataset) * 100.0:.3f}")
 
-        # Print predictions
         for i, pred in enumerate(all_preds):
             print(f"Image {i + 1}: Predicted - {self.inv_label_map[pred[0]]}")
 

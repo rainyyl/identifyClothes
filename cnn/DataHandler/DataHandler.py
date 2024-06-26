@@ -33,11 +33,13 @@ class DataHandler(Dataset):
         pic = Image.open(os.path.join(self.datapath, pic)).convert('L')
         if self.transform:
             pic = self.transform(pic)
+
+
         label = self.label_map[label]
         return pic, label
 
     @staticmethod
-    def load_data(train_datapath, train_txtpath, test_datapath, test_txtpath, batch_size=32):
+    def form_data(train_datapath, train_txtpath, test_datapath, test_txtpath, batch_size=32):
         train_set = DataHandler(train_datapath, train_txtpath)
         test_set = DataHandler(test_datapath, test_txtpath, label_map=train_set.label_map)
 
